@@ -16,7 +16,8 @@ android_app {
     system_ext_specific: true,
     privileged: true,
 
-    overrides: ["MusicFX", "AudioFX", "Music"],
+    // Miku: the product excludes Lineage AudioFX (TARGET_EXCLUDES_AUDIOFX);
+    // MusicFX and Music are kept, so no app overrides are needed here.
     static_libs: [
         "androidx.activity_activity-compose",
         "androidx.compose.animation_animation",
