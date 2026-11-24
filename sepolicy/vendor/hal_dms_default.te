@@ -4,6 +4,11 @@ hal_server_domain(hal_dms_default, hal_dms)
 type hal_dms_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_dms_default)
 
+# The DMS service links against vendor prebuilt libraries. init_daemon_domain
+# only covers its own exec type, so grant read/map/execute on vendor_file.
+allow hal_dms_default vendor_file:file { read open getattr map execute };
+allow hal_dms_default vendor_file:dir { read open getattr search };
+
 allow hal_dms_default vendor_data_file:file { rw_file_perms create unlink };
 allow hal_dms_default vendor_data_file:dir { rw_file_perms add_name remove_name };
 allow hal_dms_default mediacodec:binder call;
@@ -11,3 +16,4 @@ binder_call(hal_dms_default, hal_audio_default)
 binder_call(hal_dms_default, platform_app)
 
 get_prop(hal_dms_default, vendor_audio_prop);
+set_prop(hal_dms_default, vendor_audio_prop);
