@@ -34,7 +34,8 @@ PRODUCT_PACKAGES += \
 # Configs
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/configs/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml \
-    $(DOLBY_PATH)/configs/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml
+    $(DOLBY_PATH)/configs/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml \
+    $(DOLBY_PATH)/configs/media_codecs_dolby_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_video.xml
 
 # Dolby properties
 PRODUCT_VENDOR_PROPERTIES += \
@@ -57,13 +58,27 @@ PRODUCT_PACKAGES += \
 # Proprietary-files
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
-    $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.media.c2@1.0-service.rc
+    $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.media.c2@1.0-service.rc \
+    $(DOLBY_PATH)/proprietary/vendor/etc/init/dolbycodec2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dolbycodec2.rc \
+    $(DOLBY_PATH)/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg
 
 PRODUCT_PACKAGES += \
     vendor.dolby.hardware.dms@2.0-impl \
     vendor.dolby.hardware.dms@2.0 \
     vendor.dolby.hardware.dms@2.0-service \
     vendor.dolby.media.c2@1.0-service \
+    dolbycodec2 \
+    libcodec2_shim \
+    c2.dolby.store \
+    c2.dolby.client \
+    c2.dolby.egl \
+    libdolbyottcameracontrol \
+    libdolbyvision \
+    c2.dolby.hevc.dec \
+    c2.dolby.hevc.sec.dec \
+    c2.dolby.avc.dec \
+    c2.dolby.avc.sec.dec \
+    c2.dolby.hevc.enc \
     libcodec2_soft_ac4dec \
     libcodec2_soft_ddpdec \
     libcodec2_soft_dolby \
