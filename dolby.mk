@@ -69,6 +69,9 @@ PRODUCT_PACKAGES += \
     vendor.dolby.media.c2@1.0-service \
     dolbycodec2 \
     libcodec2_shim \
+    libcodec2_hidl_shim \
+    libshim_dolby \
+    libavservices_minijail_vendor \
     c2.dolby.store \
     c2.dolby.client \
     c2.dolby.egl \
@@ -78,7 +81,6 @@ PRODUCT_PACKAGES += \
     c2.dolby.hevc.sec.dec \
     c2.dolby.avc.dec \
     c2.dolby.avc.sec.dec \
-    c2.dolby.hevc.enc \
     libcodec2_soft_ac4dec \
     libcodec2_soft_ddpdec \
     libcodec2_soft_dolby \

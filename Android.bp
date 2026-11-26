@@ -343,7 +343,8 @@ cc_prebuilt_binary {
                 "libutils",
                 "android.hardware.media.c2@1.0",
                 "libcodec2_hidl@1.0",
-                "libavservices_minijail",
+                "libavservices_minijail_vendor",
+                "libshim_dolby",
                 "libbinder",
                 "libhidlbase",
                 "c2.dolby.store",
@@ -517,24 +518,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/c2.dolby.avc.sec.dec.so"],
-            shared_libs: ["libdolbyvision", "c2.dolby.store", "c2.dolby.client"],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "c2.dolby.hevc.enc",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: ["proprietary/vendor/lib64/c2.dolby.hevc.enc.so"],
             shared_libs: ["libdolbyvision", "c2.dolby.store", "c2.dolby.client"],
         },
     },
